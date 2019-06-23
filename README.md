@@ -20,9 +20,9 @@ Rice University Data Analytics Bootcamp | Python Challenge | Brian Labelle
 * [Blood, Sweat & Tears](http://www.pandora.com/) - Entertainment
 * [Python](https://www.python.org/) - Codes Stuff
 * [Github](https://github.com) - Holds Stuff
-* [Visual Studio Code] ( https://code.visualstudio.com/ ) - Debugs Stuff
-* [Coca-Cola] ( https://us.coca-cola.com/ ) - Fuels Stuff
-* [Adobe Fireworks] ( https://www.adobe.com/products/fireworks.html ) - Makes Pictures
+* [Visual Studio Code](https://code.visualstudio.com/) - Debugs Stuff
+* [Coca-Cola](https://us.coca-cola.com/) - Fuels Stuff
+* [Adobe Fireworks](https://www.adobe.com/products/fireworks.html) - Makes Pictures
 
  
 
