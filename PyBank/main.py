@@ -52,21 +52,81 @@
 #	
 # ===========================================================================================================================
 # ===========================================================================================================================
+#
+#
+#   +++++++++++++++++++++++++
+#	+++ Interesting Read +++
+#   +++++++++++++++++++++++++
+#
+#    Link : https://stackoverflow.com/questions/16108526/count-how-many-lines-are-in-a-csv-python
+#
+#
+#############################################################################################################################
 
 import os
+import csv
+import datetime
+
+csvpath = os.path.join('python-challenge\PyBank', 'Resources', 'budget_data.csv')
 os.system('cls')
 
-import csv
-csvpath = os.path.join('python-challenge\PyBank', 'Resources', 'budget_data.csv')
+### Your task is to create a Python script that analyzes the records to calculate each of the following:
+
+### The total number of months included in the dataset
+### The net total amount of "Profit/Losses" over the entire period
+### The average of the changes in "Profit/Losses" over the entire period
+### The greatest increase in profits (date and amount) over the entire period
+### The greatest decrease in losses (date and amount) over the entire period
+
+def financial_analysis (financial_data):
+    totalnumbermonths = str(financial_data[0])
+    #totalnumbermonths = csvreader.line_num-1
+    nettotalamount = float(financial_data[1])
+    
+    avgchanges = int()
+    #greatestincrease = int()
+    #greatestdecrease = int() 
+
+  
+
+   
+   
+        
 
 with open(csvpath, newline='') as csvfile:
 
     csvreader = csv.reader(csvfile, delimiter=',')
 
-    print(csvreader)
-
     csv_header = next(csvreader)
-    print(f"CSV Header: {csv_header}")
-    
+
     for row in csvreader:
         print(row)
+
+    nettotalamount = 0.00
+
+   # 
+    for row in csv.reader(csvfile):
+        nettotalamount += float(row[1])
+
+    totalnumbermonths = len(list(csvfile))
+    
+
+    os.system('cls')
+    for x in range(1,101,2):
+        print(f"=== Calculating Financial Analysis {str(x)}% ===")
+        os.system('cls')
+    now = datetime.datetime.now()
+    print("============================") 
+    print(f"==== Financial Analysis ==== ( Generated on: {str(now)} )")
+    print("====================================================================================") 
+    
+    # Print out Total Number of rows / months -1 for the header.
+    print(f"Total Months: {str(totalnumbermonths)}")
+    print(f"Total: ${str(nettotalamount)}")
+    #print('The total is {}'.format(total))
+
+
+####################################################################
+
+
+    
