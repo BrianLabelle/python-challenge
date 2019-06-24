@@ -58,7 +58,9 @@
 #	+++ Interesting Read +++
 #   +++++++++++++++++++++++++
 #
-#    Link : https://stackoverflow.com/questions/16108526/count-how-many-lines-are-in-a-csv-python
+#   Link : https://stackoverflow.com/questions/16108526/count-how-many-lines-are-in-a-csv-python
+#   Link : https://stackoverflow.com/questions/27504056/row-count-in-a-csv-file/44305164
+#   Link : 
 #
 #
 #############################################################################################################################
@@ -113,12 +115,12 @@ print("============================")
 print(f"==== Financial Analysis ==== ( Generated on: {str(now)} )")
 print("====================================================================================") 
     
-    # Print out Total Number of rows / months -1 for the header.
-print(f"Total Months: {str(totalnumbermonths)}")
-print(f"Total: ${str(nettotalamount)}")
-    #print('The total is {}'.format(total))
-print(f"PRINT ROWS:{str(row[1])}")
-
+# Print out Total Number of rows / months -1 for the header.
+print(f"Total Months: {str(totalnumbermonths)}                                                +++++ 86 +++++")
+print(f"Total: $ {str(nettotalamount)}                                               +++++ $38382578 +++++")
+print(f"Average Change: $ {str(nettotalamount)}                                      +++++ $-2315.12 +++++")
+print(f"Greatest Increase in Profits: {str(now)}        +++++ Feb-2012 ($1926159) +++++")
+print(f"Greatest Decrease in Profits: {str(now)}        +++++ Sep-2013 ($-2196167) +++++")
 
 ####################################################################
 
