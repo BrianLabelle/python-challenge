@@ -79,51 +79,45 @@ os.system('cls')
 ### The greatest decrease in losses (date and amount) over the entire period
 
 def financial_analysis (financial_data):
-    totalnumbermonths = str(financial_data[0])
+    #totalnumbermonths = str(financial_data[0])
     #totalnumbermonths = csvreader.line_num-1
-    nettotalamount = float(financial_data[1])
+    #nettotalamount = float(financial_data[1])
     
     avgchanges = int()
     #greatestincrease = int()
-    #greatestdecrease = int() 
-
-  
-
-   
-   
-        
+    #greatestdecrease = int()  
+    # 
+nettotalamount = 0.00 
 
 with open(csvpath, newline='') as csvfile:
-
     csvreader = csv.reader(csvfile, delimiter=',')
-
     csv_header = next(csvreader)
 
     for row in csvreader:
+        totalnumbermonths = len(list(csvreader))
+        nettotalamount += float(row[1])
         print(row)
 
-    nettotalamount = 0.00
 
-   # 
-    for row in csv.reader(csvfile):
-        nettotalamount += float(row[1])
+# reader_file = csv.reader(input_file)
+# value = len(list(reader_file))  
+  
 
-    totalnumbermonths = len(list(csvfile))
-    
+os.system('cls')
+    #for x in range(1,101,2):
+      #  print(f"=== Calculating Financial Analysis {str(x)}% ===")
+     #   os.system('cls')
+now = datetime.datetime.now()
 
-    os.system('cls')
-    for x in range(1,101,2):
-        print(f"=== Calculating Financial Analysis {str(x)}% ===")
-        os.system('cls')
-    now = datetime.datetime.now()
-    print("============================") 
-    print(f"==== Financial Analysis ==== ( Generated on: {str(now)} )")
-    print("====================================================================================") 
+print("============================") 
+print(f"==== Financial Analysis ==== ( Generated on: {str(now)} )")
+print("====================================================================================") 
     
     # Print out Total Number of rows / months -1 for the header.
-    print(f"Total Months: {str(totalnumbermonths)}")
-    print(f"Total: ${str(nettotalamount)}")
+print(f"Total Months: {str(totalnumbermonths)}")
+print(f"Total: ${str(nettotalamount)}")
     #print('The total is {}'.format(total))
+print(f"PRINT ROWS:{str(row[1])}")
 
 
 ####################################################################
