@@ -28,7 +28,7 @@ Rice University Data Analytics Bootcamp | Python Challenge | Brian Labelle
 
 ## Authors
 
-* **Brian Labelle** - *Initial work* - [Rice Cooker - Sous Chef](https://github.com/BrianLabelle)
+* **Brian Labelle** - [Rice Cooker - Sous Chef](https://github.com/BrianLabelle)
 
 
 ## License
