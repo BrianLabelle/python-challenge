@@ -109,7 +109,7 @@ os.system('cls')
     #for x in range(1,101,2):
       #  print(f"=== Calculating Financial Analysis {str(x)}% ===")
      #   os.system('cls')
-now = datetime.datetime.now()
+now = datetime.datetime.now()  
 
 print("============================") 
 print(f"==== Financial Analysis ==== ( Generated on: {str(now)} )")
