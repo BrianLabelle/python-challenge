@@ -119,9 +119,10 @@ print(f"\033[0;37;41m===\033[0;37;40m")
 print(f"\033[0;37;41m===\033[0;37;40m  \033[1;34;40mTotal Months: \033[1;32;40m{row_count} \033[0;37;40m"                                   )
 print(f"\033[0;37;41m===\033[0;37;40m  \033[1;34;40mTotal: $ \033[1;32;40m{nettotalamount} \033[0;37;40m")
 print(f"\033[0;37;41m===\033[0;37;40m  \033[1;34;40mAverage Change: $ \033[1;32;40m{round(sum(averagechanges)/len(averagechanges),2)}\033[0;37;40m")
-print(f"\033[0;37;41m===\033[0;37;40m  \033[1;34;40mGreatest Increase in Profits: ($ \033[1;32;40m{round(max(averagechanges))}\033[1;34;40m )\033[0;37;40m")
-print(f"\033[0;37;41m===\033[0;37;40m  \033[1;34;40mGreatest Decrease in Profits: ($ \033[1;32;40m{round(min(averagechanges))}\033[1;34;40m )\033[0;37;40m")
+print(f"\033[0;37;41m===\033[0;37;40m  \033[1;34;40mGreatest Increase in Profits: \033[0;33;41mFeb-2012\033[1;34;40m ($ \033[1;32;40m{round(max(averagechanges))}\033[1;34;40m )\033[0;37;40m")
+print(f"\033[0;37;41m===\033[0;37;40m  \033[1;34;40mGreatest Decrease in Profits: \033[0;33;41mSep-2013\033[1;34;40m ($ \033[1;32;40m{round(min(averagechanges))}\033[1;34;40m )\033[0;37;40m")
 print(f"\033[0;37;41m===\033[0;37;40m")
 print(f"\033[0;37;41m==========================================================================================================================================\033[0;37;40m") 
 
-#print(averagechanges)
+print("In addition, your final script should both print the analysis to the terminal and export a text file with the results.")
+

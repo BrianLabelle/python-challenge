@@ -27,6 +27,10 @@
 #	  -------------------------
 #	
 #	In addition, your final script should both print the analysis to the terminal and export a text file with the results.
+#	
+#	
+#	
+#	
 #   ++++++++++++++++++++++++++++++++
 #	+++ Hints and Considerations +++
 #   ++++++++++++++++++++++++++++++++
@@ -52,24 +56,70 @@
 #	
 #	Always commit your work and back it up with GitHub pushes. You don't want to lose hours of your work because you didn't 
 # push it to GitHub every half hour or so.
+#
+#
+# Help Link: https://realpython.com/iterate-through-dictionary-python/
+# Help Link: https://docs.python.org/3/library/collections.html#collections.Counter
+# Help Link: https://realpython.com/iterate-through-dictionary-python/
+# Help Link: https://www.tutorialspoint.com/python3/python_dictionary.htm
+# Help Link: https://www.geeksforgeeks.org/counting-the-frequencies-in-a-list-using-dictionary-in-python/
 #	
 # ===========================================================================================================================
 # ===========================================================================================================================
 
+
 import os
+import csv
+import datetime
+
+csvpath = os.path.join('python-challenge\PyPoll', 'Resources', 'election_data_sample.csv')
+
 os.system('cls')
 
-import csv
-csvpath = os.path.join('python-challenge\PyRoll', 'Resources', 'election_data.csv')
+def election_results (voting_results):
+    greatestincrease = float(voting_results[0])
+    greatestdecrease = float(voting_results[0])
+
 
 with open(csvpath, newline='') as csvfile:
+    #csvreader = csv.reader(csvfile, delimiter=',')
+    #csv_header = next(csvreader)
+    #print(f"CSV Header: {csv_header}")
+    row_count = 0
 
-    csvreader = csv.reader(csvfile, delimiter=',')
-
-    print(csvreader)
-
-    csv_header = next(csvreader)
-    print(f"CSV Header: {csv_header}")
     
-    for row in csvreader:
-        print(row)
+    voting_results = csv.DictReader(csvfile)
+
+    election_results = {voting_results}
+    for row in voting_results:
+      print(dict(row))
+  
+
+      
+
+
+# now = datetime.datetime.now()  
+
+# print(f"\033[0;37;41m==================================\033[0;37;40m ") 
+# print(f"\033[0;37;41m====\033[1;37;40m\033[1;33;40m\033[2;30;43m                          \033[0;37;41m====\033[0;37;40m     ")
+# print(f"\033[0;37;41m====\033[1;37;40m\033[1;33;40m\033[2;30;43m    \033[2;30;43mELECTION RESULTS      \033[0;37;41m====\033[0;37;40m      \033[0;34;40m( Generated on: \033[1;32;40m{str(now)}\033[0;34;40m )")
+# print(f"\033[0;37;41m====\033[1;37;40m\033[1;33;40m\033[2;30;43m                          \033[0;37;41m====\033[0;37;40m ")
+# print(f"\033[0;37;41m==========================================================================================================================================\033[0;37;40m") 
+    
+# # Print out Total Number of rows / months
+# print(f"\033[0;37;41m===\033[0;37;40m")
+
+# print(f"\033[0;37;41m===\033[0;37;40m  \033[1;34;40mTotal Votes: \033[1;32;40m{row_count} \033[0;37;40m")
+# print(f"\033[0;37;41m===\033[0;37;40m  \033[1;34;40m\033[0;37;40m---------------------------")
+# print(f"\033[0;37;41m===\033[0;37;40m  \033[1;34;40m\033[0;37;40mCandidate #1: \033[0;33;41m63% ( 2219231 )\033[1;34;40m")
+# print(f"\033[0;37;41m===\033[0;37;40m  \033[1;34;40m\033[0;37;40mCandidate #2: \033[0;33;41m63% ( 2219231 )\033[1;34;40m")
+# print(f"\033[0;37;41m===\033[0;37;40m  \033[1;34;40m\033[0;37;40mCandidate #3: \033[0;33;41m63% ( 2219231 )\033[1;34;40m")
+# print(f"\033[0;37;41m===\033[0;37;40m  \033[1;34;40m\033[0;37;40mCandidate #4: \033[0;33;41m63% ( 2219231 )\033[1;34;40m")
+# print(f"\033[0;37;41m===\033[0;37;40m  \033[1;34;40m\033[0;37;40mCandidate #5: \033[0;33;41m63% ( 2219231 )\033[1;34;40m")
+# print(f"\033[0;37;41m===\033[0;37;40m  \033[1;34;40m\033[0;37;40m---------------------------")
+# print(f"\033[0;37;41m===\033[0;37;40m  \033[1;34;40m\033[0;37;40mWinner: \033[0;33;41mChaka Khan\033[1;34;40m")
+# print(f"\033[0;37;41m===\033[0;37;40m  \033[1;34;40m\033[0;37;40m---------------------------")
+# print(f"\033[0;37;41m===\033[0;37;40m")
+# print(f"\033[0;37;41m==========================================================================================================================================\033[0;37;40m") 
+#print("In addition, your final script should both print the analysis to the terminal and export a text file with the results.")
+

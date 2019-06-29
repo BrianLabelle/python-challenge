@@ -124,4 +124,5 @@ print(f"\033[0;37;41m===\033[0;37;40m  \033[1;34;40mGreatest Decrease in Profits
 print(f"\033[0;37;41m===\033[0;37;40m")
 print(f"\033[0;37;41m==========================================================================================================================================\033[0;37;40m") 
 
-#print(averagechanges)
+print("In addition, your final script should both print the analysis to the terminal and export a text file with the results.")
+
