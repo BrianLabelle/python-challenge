@@ -75,7 +75,7 @@ import csv
 import datetime
 from collections import Counter, OrderedDict
 
-csvpath = os.path.join('python-challenge\PyPoll', 'Resources', 'election_data_sample.csv')
+csvpath = os.path.join('python-challenge\PyPoll', 'Resources', 'election_data.csv')
 
 os.system('cls')
 
