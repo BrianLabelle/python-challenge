@@ -1,7 +1,7 @@
 # Python Challenge
 Rice University Data Analytics Bootcamp | Python Challenge | Brian Labelle
 
-![hard_solution](Resources/rice-cookers-hw-3.jpg)
+![hard_solution](rice-cookers-hw-3.jpg)
 
 ## Getting Started
 
@@ -40,3 +40,5 @@ This project is licensed under the $$$$ License
 * Hat tip to anyone whose code was used
 * Inspiration
 * etc
+   
+   
