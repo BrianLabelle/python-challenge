@@ -63,63 +63,123 @@
 # Help Link: https://realpython.com/iterate-through-dictionary-python/
 # Help Link: https://www.tutorialspoint.com/python3/python_dictionary.htm
 # Help Link: https://www.geeksforgeeks.org/counting-the-frequencies-in-a-list-using-dictionary-in-python/
+# Help Link: 5 : https://stackabuse.com/python-dictionary-tutorial/
+# Help Link: https://realpython.com/python-csv/
+# Help Link: grabbed some code from here. https://github.com/catesoane/python-challenge/blob/master/Solutions/PyPoll/PyPoll.py
 #	
 # ===========================================================================================================================
 # ===========================================================================================================================
 
-
 import os
 import csv
 import datetime
+from collections import Counter, OrderedDict
 
 csvpath = os.path.join('python-challenge\PyPoll', 'Resources', 'election_data_sample.csv')
 
 os.system('cls')
 
 def election_results (voting_results):
-    greatestincrease = float(voting_results[0])
-    greatestdecrease = float(voting_results[0])
+
+  totalvotes = 0
 
 
 with open(csvpath, newline='') as csvfile:
+    totalvotes = 0
+    candidatelist = []
+    totalcandidatevotes = {}
+    winner = ""
+    winningcount = 0
     #csvreader = csv.reader(csvfile, delimiter=',')
     #csv_header = next(csvreader)
     #print(f"CSV Header: {csv_header}")
     row_count = 0
-
     
     voting_results = csv.DictReader(csvfile)
 
-    election_results = {voting_results}
     for row in voting_results:
-      print(dict(row))
-  
 
+      # this will count all of the votes
+      row_count = row_count +1
+      #print(dict(row))
       
+      # class 'csv.DictReader'
+      # print(type(voting_results))
 
+      # class 'collections.OrderedDict
+      # print(type(row))
 
-# now = datetime.datetime.now()  
+      # class 'csv.DictReader'
+      # print(type(voting_results))
 
-# print(f"\033[0;37;41m==================================\033[0;37;40m ") 
-# print(f"\033[0;37;41m====\033[1;37;40m\033[1;33;40m\033[2;30;43m                          \033[0;37;41m====\033[0;37;40m     ")
-# print(f"\033[0;37;41m====\033[1;37;40m\033[1;33;40m\033[2;30;43m    \033[2;30;43mELECTION RESULTS      \033[0;37;41m====\033[0;37;40m      \033[0;34;40m( Generated on: \033[1;32;40m{str(now)}\033[0;34;40m )")
-# print(f"\033[0;37;41m====\033[1;37;40m\033[1;33;40m\033[2;30;43m                          \033[0;37;41m====\033[0;37;40m ")
-# print(f"\033[0;37;41m==========================================================================================================================================\033[0;37;40m") 
+      # class 'collections.OrderedDict
+      #print(type(row))
+
+      #print(row)
+
+      candidatename = row["Candidate"]
+
+      if candidatename not in candidatelist:
+
+        candidatelist.append(candidatename)
+        totalcandidatevotes[candidatename] = 0
+
+      totalcandidatevotes[candidatename] = totalcandidatevotes[candidatename] + 1
+
+    #election_results = ({row_count})
+    #print(election_results)
+os.system('cls')
+now = datetime.datetime.now()  
+
+print(f"\033[0;37;41m==================================\033[0;37;40m ") 
+print(f"\033[0;37;41m====\033[1;37;40m\033[1;33;40m\033[2;30;43m                          \033[0;37;41m====\033[0;37;40m     ")
+print(f"\033[0;37;41m====\033[1;37;40m\033[1;33;40m\033[2;30;43m    \033[2;30;43mELECTION RESULTS      \033[0;37;41m====\033[0;37;40m      \033[0;34;40m( Generated on: \033[1;32;40m{str(now)}\033[0;34;40m )")
+print(f"\033[0;37;41m====\033[1;37;40m\033[1;33;40m\033[2;30;43m                          \033[0;37;41m====\033[0;37;40m ")
+print(f"\033[0;37;41m==========================================================================================================================================\033[0;37;40m") 
     
-# # Print out Total Number of rows / months
-# print(f"\033[0;37;41m===\033[0;37;40m")
+# Print out Total Number of rows / months
+print(f"\033[0;37;41m===\033[0;37;40m")
 
-# print(f"\033[0;37;41m===\033[0;37;40m  \033[1;34;40mTotal Votes: \033[1;32;40m{row_count} \033[0;37;40m")
-# print(f"\033[0;37;41m===\033[0;37;40m  \033[1;34;40m\033[0;37;40m---------------------------")
-# print(f"\033[0;37;41m===\033[0;37;40m  \033[1;34;40m\033[0;37;40mCandidate #1: \033[0;33;41m63% ( 2219231 )\033[1;34;40m")
-# print(f"\033[0;37;41m===\033[0;37;40m  \033[1;34;40m\033[0;37;40mCandidate #2: \033[0;33;41m63% ( 2219231 )\033[1;34;40m")
-# print(f"\033[0;37;41m===\033[0;37;40m  \033[1;34;40m\033[0;37;40mCandidate #3: \033[0;33;41m63% ( 2219231 )\033[1;34;40m")
-# print(f"\033[0;37;41m===\033[0;37;40m  \033[1;34;40m\033[0;37;40mCandidate #4: \033[0;33;41m63% ( 2219231 )\033[1;34;40m")
-# print(f"\033[0;37;41m===\033[0;37;40m  \033[1;34;40m\033[0;37;40mCandidate #5: \033[0;33;41m63% ( 2219231 )\033[1;34;40m")
-# print(f"\033[0;37;41m===\033[0;37;40m  \033[1;34;40m\033[0;37;40m---------------------------")
-# print(f"\033[0;37;41m===\033[0;37;40m  \033[1;34;40m\033[0;37;40mWinner: \033[0;33;41mChaka Khan\033[1;34;40m")
-# print(f"\033[0;37;41m===\033[0;37;40m  \033[1;34;40m\033[0;37;40m---------------------------")
-# print(f"\033[0;37;41m===\033[0;37;40m")
-# print(f"\033[0;37;41m==========================================================================================================================================\033[0;37;40m") 
-#print("In addition, your final script should both print the analysis to the terminal and export a text file with the results.")
+print(f"\033[0;37;41m===\033[0;37;40m  \033[1;34;40mTotal Votes: \033[1;32;40m{row_count} \033[0;37;40m")
+print(f"\033[0;37;41m===\033[0;37;40m  \033[1;34;40m\033[0;37;40m\033[1;35;40m---------------------------")
+for candidate in totalcandidatevotes:
+        votes = totalcandidatevotes.get(candidate)
+        votepercentage = float(votes) / float(row_count) * 100
+        if (votes > winningcount):
+            winningcount = votes
+            winner = candidate
+        voteroutput = f"\033[0;37;41m===\033[0;37;40m  \033[1;34;40m\033[1;34;40m{candidate}: \033[1;32;40m{votepercentage:.3f}% \033[1;35;40m({votes})\n"
+        print(voteroutput, end="")
 
+print(f"\033[0;37;41m===\033[0;37;40m  \033[1;34;40m\033[0;37;40m\033[1;35;40m---------------------------")
+print(f"\033[0;37;41m===\033[0;37;40m  \033[1;34;40m\033[0;37;40m\033[1;33;40mWinner: \033[0;33;41m {winner} \033[1;34;40m")
+print(f"\033[0;37;41m===\033[0;37;40m  \033[1;34;40m\033[0;37;40m\033[1;35;40m---------------------------")
+print(f"\033[0;37;41m===\033[0;37;40m")
+print(f"\033[0;37;41m==========================================================================================================================================\033[0;37;40m") 
+print("EXPOTED CSV FILE")
+
+
+
+# Specify the file to write to
+
+timestamp=str(now.year)+"-"+str(now.month)+"-"+str(now.day)
+output_path = os.path.join('python-challenge\PyPoll', 'Resources', 'election_results-'+str(timestamp)+'.csv')
+
+# Open the file using "write" mode. Specify the variable to hold the contents
+with open(output_path, 'w', newline='') as csvfile:
+
+    # Initialize csv.writer
+    csvwriter = csv.writer(csvfile, delimiter=',')
+
+    # Write the first row (column headers)
+    csvwriter.writerow(["Election Results Generated: ", now])
+    csvwriter.writerow(["============================================================="])
+    csvwriter.writerow(["Total Votes: ", row_count])
+    csvwriter.writerow(["============================================================="])
+    csvwriter.writerow(["Candidate", "Vote Percentage", "Votes Counts"])
+
+    # Write the candidates stats
+    for candidate in totalcandidatevotes:
+        votes = totalcandidatevotes.get(candidate)
+        votepercentage = float(votes) / float(row_count) * 100
+        csvwriter.writerow([candidate, votepercentage, votes])

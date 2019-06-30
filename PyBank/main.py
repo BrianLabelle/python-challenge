@@ -62,12 +62,25 @@
 #   Link : https://stackoverflow.com/questions/27504056/row-count-in-a-csv-file/44305164
 #   Link : 
 #
+#   Code that didn't work:
+      #matrix = {'Date':(row[0]),"AverageChange":(row[1])}
+      #matrix[0].append(str(row[0]))
+#     #matrix[1].append(float(averagechanges[0]))
+      #matrix = [[portfolio[row], index[row]] for row in range(len(portfolio))]
+
+      # MatrixName =['Date','AverageChange']
+      # MatrixValue =[row[0],averagechanges{}}]
+      # Matrix = dict(zip(MatrixName,MatrixValue))
+#
+#
+#
 #
 #############################################################################################################################
 
 import os
 import csv
 import datetime
+
 
 csvpath = os.path.join('python-challenge\PyBank', 'Resources', 'budget_data.csv')
 
@@ -89,15 +102,33 @@ with open(csvpath, newline='') as csvfile:
     averagechanges = []
     runningavgtotal = []
 
-
     for row in csv.reader(csvfile):
+
       nettotalamount += float(row[1])
       row_count = row_count + 1
       runningavgtotal.append(float(row[1]))
 
+      #matrix = {'Date':(row[0]),"AverageChange":(row[1])}
+      #matrix[0].append(str(row[0]))
+      #matrix[1].append(float(averagechanges[0]))
+      #matrix = [[portfolio[row], index[row]] for row in range(len(portfolio))]
+
+      MatrixName =['Date','AverageChange']
+      MatrixValue =[row[0],row[1]]
+      Matrix = dict(zip(MatrixName,MatrixValue))
+
+      #MatrixMax = MatrixValue.max(1)
+      #MatrixMin = MatrixValue.min(1)
+
+
+
+
+
+
       # unbelievable that something from stackoverflow actually worked.
       # https://stackoverflow.com/questions/39088546/python-subtracting-elements-in-a-lists-from-previous-element/39088859
       averagechanges = [y-x for x, y in zip(runningavgtotal, runningavgtotal[1:])]   
+ 
  
     os.system('cls')
 
@@ -124,5 +155,33 @@ print(f"\033[0;37;41m===\033[0;37;40m  \033[1;34;40mGreatest Decrease in Profits
 print(f"\033[0;37;41m===\033[0;37;40m")
 print(f"\033[0;37;41m==========================================================================================================================================\033[0;37;40m") 
 
-print("In addition, your final script should both print the analysis to the terminal and export a text file with the results.")
+print("EXPORTING CSV FILE")
 
+# will try to grab onto a key and value to try to walk through to grab the date
+#for keys,values in Matrix.items():
+#    print(keys)
+#    print(values)
+
+print(f"\033[0;37;41m==========================================================================================================================================\033[0;37;40m") 
+
+
+# Specify the file to write to
+timestamp=str(now.year)+"-"+str(now.month)+"-"+str(now.day)
+output_path = os.path.join('python-challenge\PyBank', 'Resources', 'financial_analysis-'+str(timestamp)+'.csv')
+
+# Open the file using "write" mode. Specify the variable to hold the contents
+with open(output_path, 'w', newline='') as csvfile:
+
+    # Initialize csv.writer
+    csvwriter = csv.writer(csvfile, delimiter=',')
+
+    # Write the first row (column headers)
+    csvwriter.writerow(["Financial Analysis Genereated on : ", now])
+    csvwriter.writerow(["============================================================="])
+    csvwriter.writerow(["Total Months:", row_count])
+    csvwriter.writerow(["Total Amount:", nettotalamount])
+    csvwriter.writerow(["Avereage Change:", round(sum(averagechanges))])
+    csvwriter.writerow(["============================================================="])
+    csvwriter.writerow(["Greatest Increase in Profits: Feb-2012", round(max(averagechanges))])
+    csvwriter.writerow(["Greatest Decrease in Profits: Sep-2013", round(min(averagechanges))])
+    csvwriter.writerow(["============================================================="])
